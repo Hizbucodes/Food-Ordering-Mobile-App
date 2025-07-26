@@ -12,6 +12,7 @@ import products from "@assets/data/products";
 import { defaultPizzaImage } from "@/components/ProductListItem";
 import { PizzaSize } from "@/types";
 import Colors from "@/constants/Colors";
+import Button from "@/components/Button";
 
 const sizes: PizzaSize[] = ["S", "M", "L", "XL"];
 
@@ -23,12 +24,16 @@ const ProductDetail = () => {
 
   console.log("Product: ", product?.name);
 
+  const addToCart = () => {
+    console.warn("Adding to cart");
+  };
+
   return (
     <>
       <Stack.Screen
         options={{ title: product?.name, headerTitleAlign: "center" }}
       />
-      <ScrollView style={styles.container}>
+      <View style={styles.container}>
         <Image
           source={{ uri: product?.image || defaultPizzaImage }}
           style={styles.image}
@@ -70,7 +75,12 @@ const ProductDetail = () => {
             );
           })}
         </View>
-      </ScrollView>
+
+        <Text style={{ fontWeight: "bold", fontSize: 18, marginTop: "auto" }}>
+          ${product?.price}
+        </Text>
+        <Button text="Add to Cart" onPress={addToCart} />
+      </View>
     </>
   );
 };
@@ -79,6 +89,7 @@ export default ProductDetail;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: "white",
     paddingHorizontal: 20,
   },
