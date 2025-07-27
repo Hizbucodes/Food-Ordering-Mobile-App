@@ -52,53 +52,7 @@ const MenuStack = () => {
         }}
       />
 
-      <Stack.Screen
-        name="[id]"
-        options={{
-          title: "Menu",
-          headerTitleAlign: "center",
-          headerRight: () => (
-            <Link href={"/"} asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      marginRight: 10,
-                      columnGap: 5,
-                    }}
-                  >
-                    <FontAwesome
-                      color={Colors.light.tint}
-                      size={25}
-                      name="pencil-square-o"
-                      style={{ opacity: pressed ? 0.5 : 1 }}
-                    />
-                    <Text
-                      style={{
-                        fontWeight: "bold",
-                        fontSize: 14,
-                        color: Colors.light.tint,
-                      }}
-                    >
-                      Edit
-                    </Text>
-                  </View>
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
-      />
-
-      <Stack.Screen
-        name="create"
-        options={{
-          headerTitleAlign: "center",
-          title: "Create Product",
-        }}
-      />
+      <Stack.Screen name="create" />
     </Stack>
   );
 };
