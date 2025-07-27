@@ -6,7 +6,7 @@ const AuthLayoutScreen = () => {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name="signin"
         options={{ title: "Sign in", headerTitleAlign: "center" }}
       />
       <Stack.Screen
