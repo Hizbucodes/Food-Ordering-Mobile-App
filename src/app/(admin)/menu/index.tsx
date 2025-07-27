@@ -25,6 +25,7 @@ const Index = () => {
       ListEmptyComponent={<Text>No products found.</Text>}
       contentContainerStyle={{ gap: 10, padding: 10 }}
       columnWrapperStyle={{ gap: 10 }}
+      showsVerticalScrollIndicator={false}
     />
   );
 };

@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Product } from "../types";
-import { Link } from "expo-router";
+import { Link, useSegments } from "expo-router";
 
 export const defaultPizzaImage =
   "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png";
@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     maxWidth: "50%",
+    borderRadius: 8,
+    elevation: 5,
   },
   title: {
     fontSize: 20,

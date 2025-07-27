@@ -6,8 +6,10 @@ import CartProvider from "@/providers/CartProvider";
 const RootLayout = () => {
   return (
     <CartProvider>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack initialRouteName="index">
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(admin)" options={{ headerShown: false }} />
+        <Stack.Screen name="(user)" options={{ headerShown: false }} />
         <Stack.Screen name="cart" options={{ presentation: "modal" }} />
       </Stack>
     </CartProvider>
