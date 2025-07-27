@@ -17,7 +17,7 @@ const MenuStack = () => {
           title: "Menu",
           headerTitleAlign: "center",
           headerRight: () => (
-            <Link href={"/"} asChild>
+            <Link href={"/(admin)/menu/create"} asChild>
               <Pressable>
                 {({ pressed }) => (
                   <View
@@ -89,6 +89,14 @@ const MenuStack = () => {
               </Pressable>
             </Link>
           ),
+        }}
+      />
+
+      <Stack.Screen
+        name="create"
+        options={{
+          headerTitleAlign: "center",
+          title: "Create Product",
         }}
       />
     </Stack>
