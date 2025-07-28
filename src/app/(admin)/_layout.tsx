@@ -37,11 +37,10 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="order"
+        name="orders"
         options={{
-          headerTitleAlign: "center",
-          headerTitle: "Order",
-          title: "Order",
+          title: "Orders",
+          headerShown: false,
           tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
         }}
       />

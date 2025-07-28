@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import { defaultPizzaImage } from "@/components/ProductListItem";
 import Colors from "@/constants/Colors";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert, Image, StyleSheet, Text, TextInput, View } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { Stack, useLocalSearchParams } from "expo-router";
@@ -74,11 +74,15 @@ const CreateProductScreen = () => {
     return true;
   };
 
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
   //Select Image Function
   const pickImage = async () => {
-    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    // const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
-    if (status !== "granted") {
+    if (status?.granted !== true) {
       Alert.alert(
         "Permission required",
         "We need access to your media library to pick an image."
